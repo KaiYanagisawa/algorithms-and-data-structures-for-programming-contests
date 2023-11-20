@@ -13,7 +13,7 @@ int main()
     cin >> prices[i];
 
   vector<int> maxes;
-  // O(n^2)の計算をしているためメモリも実行時間もオーバーしてしまう
+  // FIX: O(n^2)の計算をしているためメモリも実行時間もオーバーしてしまう
   for (int i = 0; i < prices.size() - 1; i++)
   {
     for (int j = i + 1; j < prices.size(); j++)
