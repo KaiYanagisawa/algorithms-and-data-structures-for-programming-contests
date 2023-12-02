@@ -18,9 +18,13 @@ void bubble_sort(Card trump[], int N)
    }
 }
 
-bool is_stable(Card trump[], int N)
+bool is_stable(Card trump[], Card trump2[], int N)
 {
-
+  for (int i = 0; i < N; i++)
+    if (trump[i].suit != trump2[i].suit)
+      return false;
+  
+  return true;
 }
 
 void selection_sort(Card trump[], int N)
@@ -53,10 +57,17 @@ int main()
     cout << trump[i].suit << trump[i].value << " ";
   cout << endl;
 
+  cout << "Stable" << endl;
+
   selection_sort(trump2, N);
   for (int i = 0; i < N; i++)
     cout << trump2[i].suit << trump2[i].value << " ";
   cout << endl;
+
+  if (is_stable(trump, trump2, N))
+    cout << "Stable" << endl;
+  else
+    cout << "Not stable" << endl;
 
   return 0;
 }
