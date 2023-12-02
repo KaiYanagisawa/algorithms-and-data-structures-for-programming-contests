@@ -2,13 +2,13 @@
 
 using namespace std;
 
-struct card
+struct Card
 {
   char suit;
   int value;
 };
 
-void bubble_sort(card trump[], int N)
+void bubble_sort(Card trump[], int N)
 {
   for (int i = 0; i < N; i++)
    for (int j = N - 1; j > i; j--)
@@ -18,7 +18,12 @@ void bubble_sort(card trump[], int N)
    }
 }
 
-void selection_sort(card trump[], int N)
+bool is_stable(Card trump[], int N)
+{
+
+}
+
+void selection_sort(Card trump[], int N)
 {
   for (int i = 0; i < N; i++)
   {
@@ -36,7 +41,7 @@ int main()
   int N;
   cin >> N;
 
-  card trump[36], trump2[36];
+  Card trump[36], trump2[36];
   for (int i = 0; i < N; i++)
     cin >> trump[i].suit >> trump[i].value;
 
