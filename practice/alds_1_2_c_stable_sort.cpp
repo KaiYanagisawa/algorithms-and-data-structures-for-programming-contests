@@ -12,10 +12,8 @@ void bubble_sort(Card trump[], int N)
 {
   for (int i = 0; i < N; i++)
     for (int j = N - 1; j > i; j--)
-    {
       if (trump[j - 1].value > trump[j].value)
         swap(trump[j - 1], trump[j]);
-    }
 }
 
 bool is_stable(Card trump[], Card trump2[], int N)
