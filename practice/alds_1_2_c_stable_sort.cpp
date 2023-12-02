@@ -18,6 +18,19 @@ void bubble_sort(card trump[], int N)
    }
 }
 
+void selection_sort(card trump[], int N)
+{
+  for (int i = 0; i < N; i++)
+  {
+    int min = i;
+    for (int j = i; j < N; j++)
+      if (trump[j].value < trump[min].value)
+        min = j;
+    if (min != i)
+      swap(trump[i], trump[min]);
+  }
+}
+
 int main()
 {
   int N;
@@ -33,4 +46,12 @@ int main()
   bubble_sort(trump, N);
   for (int i = 0; i < N; i++)
     cout << trump[i].suit << trump[i].value << " ";
+  cout << endl;
+
+  selection_sort(trump2, N);
+  for (int i = 0; i < N; i++)
+    cout << trump2[i].suit << trump2[i].value << " ";
+  cout << endl;
+
+  return 0;
 }
