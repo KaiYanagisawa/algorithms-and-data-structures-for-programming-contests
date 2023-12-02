@@ -54,15 +54,13 @@ int main()
 
   bubble_sort(trump, N);
   for (int i = 0; i < N; i++)
-    cout << trump[i].suit << trump[i].value << " ";
-  cout << endl;
+    cout << trump[i].suit << trump[i].value << ((i == N - 1) ? "\n" : " ");
 
   cout << "Stable" << endl;
 
   selection_sort(trump2, N);
   for (int i = 0; i < N; i++)
-    cout << trump2[i].suit << trump2[i].value << " ";
-  cout << endl;
+    cout << trump2[i].suit << trump2[i].value << ((i == N - 1) ? "\n" : " ");
 
   if (is_stable(trump, trump2, N))
     cout << "Stable" << endl;
